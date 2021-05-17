@@ -28,7 +28,6 @@ public class DiscordBotAuthorizer
 
     public async Task<string> GetTokenResponse()
     {
-        //api endpoint
         var requestUri = _apiEndpoint;
 
         var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
