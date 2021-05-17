@@ -18,7 +18,7 @@ public class DiscordBotAuthorizer
     private List<KeyValuePair<string, string>> GetRequestContent()
     {
         var list = new List<KeyValuePair<string, string>>();
-        DiscordBotAuthorizer bot = new DiscordBotAuthorizer();
+
         for (int i = 0; i < ConfigurationManager.AppSettings.Count; i++)
         {
             list.Add(new KeyValuePair<string, string>(ConfigurationManager.AppSettings.GetKey(i), ConfigurationManager.AppSettings.GetValues(i).First()));

@@ -6,11 +6,13 @@ namespace ZeroIssuesBot
 {
     class Program
     {
+        private static DiscordToken Token { get; set; }
+
         static async Task Main(string[] args)
         {
             DiscordBotAuthorizer authorizer = new DiscordBotAuthorizer();
 
-            Console.WriteLine(await authorizer.GetTokenResponse());
+            Token = DiscordToken.GetTokenFromResponse(await authorizer.GetTokenResponse());
         }
     }
 }
