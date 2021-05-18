@@ -1,0 +1,46 @@
+{
+  "hello": {
+    "name": "hello",
+    "description": "Say Hello",
+    "options": [
+      {
+        "name": "hello-type",
+        "description": "Type of hello",
+        "type": 3,
+        "required": "true",
+        "choices": [
+          {
+            "name": "Hi",
+            "value": "Hi"
+          },
+          {
+            "name": "Hello",
+            "value": "Hello"
+          }
+        ]
+      }
+    ]
+  },
+  "goodbye": {
+    "name": "hello",
+    "description": "Say Hello",
+    "options": [
+      {
+        "name": "hello-type",
+        "description": "Type of hello",
+        "type": 3,
+        "required": "true",
+        "choices": [
+          {
+            "name": "Hi",
+            "value": "Hi"
+          },
+          {
+            "name": "Hello",
+            "value": "Hello"
+          }
+        ]
+      }
+    ]
+  }
+}

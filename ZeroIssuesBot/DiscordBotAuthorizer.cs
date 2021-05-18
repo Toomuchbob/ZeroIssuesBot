@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net.Http;
@@ -13,8 +14,6 @@ public class DiscordBotAuthorizer
     private readonly string _permissions = ConfigurationManager.AppSettings["permissions"];
     private readonly string _apiEndpoint = ConfigurationManager.ConnectionStrings["apiEndpoint"].ToString();
 
-    private static HttpClient Client = new HttpClient();
-
     private List<KeyValuePair<string, string>> GetRequestContent()
     {
         var list = new List<KeyValuePair<string, string>>();
@@ -26,14 +25,14 @@ public class DiscordBotAuthorizer
         return list;
     }
 
-    public async Task<string> GetTokenResponse()
+    public async Task<string> GetTokenResponse(HttpClient client)
     {
-        var requestUri = _apiEndpoint;
+        Uri requestUri = new Uri($"{_apiEndpoint}/oauth2/token");
 
         var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
         request.Content = new FormUrlEncodedContent(GetRequestContent());
 
-        var response = await Client.SendAsync(request);
+        var response = await client.SendAsync(request);
 
         return await response.Content.ReadAsStringAsync();
     }

@@ -12,8 +12,6 @@ namespace ZeroIssuesBot
         public string scope { get; set; }
         public string token_type { get; set; }
 
-        public DiscordToken() { }
-
         public static DiscordToken GetTokenFromResponse(string responseString)
         {
             return JsonConvert.DeserializeObject<DiscordToken>(responseString);
