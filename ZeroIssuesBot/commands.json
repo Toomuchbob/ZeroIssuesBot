@@ -1,5 +1,5 @@
-{
-  "hello": {
+[
+  {
     "name": "hello",
     "description": "Say Hello",
     "options": [
@@ -21,26 +21,26 @@
       }
     ]
   },
-  "goodbye": {
-    "name": "hello",
-    "description": "Say Hello",
+  {
+    "name": "rsntrn",
+    "description": "Say aerg",
     "options": [
       {
-        "name": "hello-type",
-        "description": "Type of hello",
+        "name": "hello-aerg",
+        "description": "Type of aerg",
         "type": 3,
         "required": "true",
         "choices": [
           {
-            "name": "Hi",
-            "value": "Hi"
+            "name": "aerg",
+            "value": "aerg"
           },
           {
-            "name": "Hello",
-            "value": "Hello"
+            "name": "aergr",
+            "value": "aergr"
           }
         ]
       }
     ]
   }
-}
+]

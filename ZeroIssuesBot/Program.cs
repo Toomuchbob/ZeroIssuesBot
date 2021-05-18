@@ -1,8 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,7 +16,15 @@ namespace ZeroIssuesBot
 
             Console.WriteLine(Token.access_token);
 
-            var command = JsonConvert.DeserializeObject<SlashCommand>(File.ReadAllText(@"C:\Users\GinoZacc\source\repos\ZeroIssuesBot\ZeroIssuesBot\commands.json"));
+            // Get list of slash commands from commands.json
+            var listOfCommands = CommandRegistrar.GetSlashCommands();
+
+            // Register each command from the list
+            foreach (var command in listOfCommands)
+            {
+                var res = await CommandRegistrar.AddApplicationCommand(Client, Token, command);
+                Console.WriteLine(res);
+            }
         }
     }
 }

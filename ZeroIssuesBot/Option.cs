@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ZeroIssuesBot
 {
-    class SlashCommand
+    public class Option
     {
         [JsonProperty("name")]
         public string Name { get; set; }
@@ -11,7 +11,13 @@ namespace ZeroIssuesBot
         [JsonProperty("description")]
         public string Description { get; set; }
 
-        [JsonProperty("options")]
-        public List<Option> Options { get; set; }
+        [JsonProperty("type")]
+        public int Type { get; set; }
+
+        [JsonProperty("required")]
+        public string Required { get; set; }
+
+        [JsonProperty("choices")]
+        public List<Choice> Choices { get; set; }
     }
 }
